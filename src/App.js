@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     // check on first render if the user was logged in and if he was
-    // im fetching his favorites data
+    // im fetching the user's favorites data
 
     const userData = sessionStorage.getItem("user");
 
