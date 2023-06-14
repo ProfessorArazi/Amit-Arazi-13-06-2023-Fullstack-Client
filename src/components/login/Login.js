@@ -14,8 +14,8 @@ const Login = () => {
 
   const [signup, setSignup] = useState(false);
   const [values, setValues] = useState({
-    username: "",
-    password: "",
+    username: "demo",
+    password: "demo1234",
   });
 
   const submitHandler = async (e) => {
