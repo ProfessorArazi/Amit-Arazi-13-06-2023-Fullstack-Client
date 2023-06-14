@@ -1,0 +1,161 @@
+.home {
+  display: flex;
+  align-items: flex-start;
+}
+
+.input-and-desc {
+  flex: 3;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  position: relative;
+  gap: 1rem;
+  width: 100%;
+}
+
+.input-container .input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 0 !important;
+  width: 120px;
+}
+
+.input-container .input.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.input-container .input.dark::placeholder {
+  color: #fff;
+}
+
+.container {
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 16px;
+  flex: 2;
+  height: 200px;
+}
+
+.container.dark {
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+}
+
+.options {
+  flex: 1;
+  list-style-type: none;
+  border-left: 3px solid;
+  margin-top: 50px;
+  min-height: 400px;
+}
+
+.options li {
+  padding: 20px 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15rem;
+}
+
+.header-description {
+  display: flex;
+  gap: 1rem;
+}
+
+.header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.header p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-buttons svg {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.content {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.temperatures {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.day {
+  border: 2px solid #ccc;
+  padding: 20px;
+}
+
+.day div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .header {
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  /* .body {
+    padding: 20px;
+  } */
+
+  .options {
+    margin-left: 20px;
+    padding: 0;
+  }
+
+  .temperatures {
+    flex-wrap: wrap;
+  }
+
+  .day {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 769px) {
+  .input-container .input {
+    width: 300px;
+  }
+}
