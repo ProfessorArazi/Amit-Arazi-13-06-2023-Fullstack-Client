@@ -1,10 +1,10 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const toastErrorHandler = () => {
+const toastErrorHandler = (error) => {
   // show error toastify
 
-  toast.error("Something went wrong, check your API key", {
+  toast.error(error || "Something went wrong, please try again later", {
     position: "top-left",
     autoClose: 3000,
     hideProgressBar: true,
@@ -24,7 +24,7 @@ export const autocompleteHandler = async (value) => {
     .then((res) => {
       return res.data;
     })
-    .catch((error) => toastErrorHandler());
+    .catch((error) => toastErrorHandler(error.response?.data?.error));
   return data;
 };
 
@@ -43,7 +43,7 @@ export const getCityDataHandler = async (option, metric) => {
         Key: option.Key,
       };
     })
-    .catch((error) => toastErrorHandler());
+    .catch((error) => toastErrorHandler(error.response?.data?.error));
   return data;
 };
 
@@ -60,7 +60,7 @@ export const signupHandler = async (data) => {
       sessionStorage.setItem("user", JSON.stringify(user));
       return { user };
     })
-    .catch((error) => console.log(error));
+    .catch((error) => toastErrorHandler(error.response?.data?.error));
   return result;
 };
 
@@ -77,7 +77,7 @@ export const loginHandler = async (data) => {
       sessionStorage.setItem("user", JSON.stringify(user));
       return { user, favorites: JSON.parse(favorites) };
     })
-    .catch((error) => console.log(error));
+    .catch((error) => toastErrorHandler(error.response?.data?.error));
   return result;
 };
 
@@ -93,7 +93,7 @@ export const addFavoriteHandler = async (user, newFavorite) => {
     .then((res) => {
       return res.data.favorites;
     })
-    .catch((error) => console.log(error));
+    .catch((error) => toastErrorHandler(error.response?.data?.error));
   return favorites;
 };
 
@@ -109,7 +109,7 @@ export const removeFavoriteHandler = async (user, favorite) => {
     .then((res) => {
       return res.data.favorites;
     })
-    .catch((error) => console.log(error));
+    .catch((error) => toastErrorHandler(error.response?.data?.error));
   return favorites;
 };
 
@@ -124,6 +124,6 @@ export const getFavoritesHandler = async (user) => {
     .then((res) => {
       return res.data.favorites;
     })
-    .catch((error) => console.log(error));
+    .catch((error) => toastErrorHandler(error.response?.data?.error));
   return favorites;
 };

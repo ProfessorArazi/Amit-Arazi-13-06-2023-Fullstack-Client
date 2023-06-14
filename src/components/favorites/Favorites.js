@@ -47,7 +47,7 @@ const Favorites = () => {
         <div className="input-and-desc">
           <h1 className="favorites-title">Favorites</h1>
           <div className="body">
-            {currentWeather.Key && (
+            {currentWeather.Key && favorites.length > 0 && (
               <div className={`container ${theme === "dark" ? "dark" : ""}`}>
                 <div className="header">
                   <div className="weather-data">
