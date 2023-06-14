@@ -42,7 +42,7 @@ const Login = () => {
 
   return (
     <div className={`login ${theme === "dark" ? "login-dark" : ""}`}>
-      <h1 className="title login-title">Sign {signup ? "Up" : "In"}</h1>
+      <h1 className="title">Sign {signup ? "Up" : "In"}</h1>
       <form className="form login-form" onSubmit={submitHandler}>
         <input
           className="input"

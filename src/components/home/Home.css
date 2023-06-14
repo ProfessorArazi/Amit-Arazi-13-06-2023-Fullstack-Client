@@ -97,34 +97,6 @@
   background-color: transparent;
 }
 
-.content {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.content h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.temperatures {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.day {
-  border: 2px solid #ccc;
-  padding: 20px;
-}
-
-.day div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 5px;
-}
-
 @media (max-width: 768px) {
   .container {
     width: 100%;
@@ -136,22 +108,9 @@
     justify-content: space-between;
   }
 
-  /* .body {
-    padding: 20px;
-  } */
-
   .options {
     margin-left: 20px;
     padding: 0;
-  }
-
-  .temperatures {
-    flex-wrap: wrap;
-  }
-
-  .day {
-    width: 100%;
-    margin-bottom: 10px;
   }
 }
 @media (min-width: 769px) {
